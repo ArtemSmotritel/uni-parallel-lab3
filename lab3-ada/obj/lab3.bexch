@@ -1,0 +1,22 @@
+[GENERATED OBJECT FILE]
+b__lab3.o
+[PROJECT FILES]
+C:\Users\Artem\Documents\uni\parallel\lab3\lab3-ada\lab3.gpr
+20240421081750 13c2e32fef7cf6f30632c1b244cf2f73
+[BOUND OBJECT FILES]
+C:\Users\Artem\Documents\uni\parallel\lab3\lab3-ada\obj\lab3.o
+[GENERATED SOURCE FILES]
+b__lab3.ads
+b__lab3.adb
+b__lab3.ali
+[RESULTING OPTIONS]
+-LC:\Users\Artem\Documents\uni\parallel\lab3\lab3-ada\obj\
+-LC:\Users\Artem\Documents\uni\parallel\lab3\lab3-ada\obj\
+-LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnarl.a
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads
