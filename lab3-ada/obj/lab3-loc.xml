@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<Locations>
-  <Project>
-    <vfs_file />
+<Locations >
+  <Project >
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\Artem\Documents\uni\parallel\lab3\lab3-ada\lab3.gpr</vfs_project>
       <vfs_file>C:\Users\Artem\Documents\uni\parallel\lab3\lab3-ada\src\lab3.adb</vfs_file>
