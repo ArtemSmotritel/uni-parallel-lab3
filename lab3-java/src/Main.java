@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.concurrent.Executors;
 
 public class Main {
     private static final int STORAGE_CAPACITY = 2;
@@ -8,14 +9,16 @@ public class Main {
     public static void main(String[] args) {
         var storage = new SimpleStorage(STORAGE_CAPACITY);
 
+        var executor = Executors.newFixedThreadPool(5);
+
         for (int k : itemsToProduceForEachProducer) {
             var producer = new SimpleProducer(storage, k);
-            new Thread(producer).start();
+            executor.submit(producer);
         }
 
         for (int j : itemsToConsumeForEachConsumer) {
             var consumer = new SimpleConsumer(storage, j);
-            new Thread(consumer).start();
+            executor.submit(consumer);
         }
 
         int producedItemsTotal = Arrays.stream(itemsToProduceForEachProducer).sum();
@@ -27,10 +30,10 @@ public class Main {
 
         if (producedItemsTotal > consumedItemsTotal) {
             var dummyConsumer = new DummyConsumer(storage, producedItemsTotal - consumedItemsTotal);
-            new Thread(dummyConsumer).start();
+            executor.submit(dummyConsumer);
         } else {
             var dummyProducer = new DummyProducer(storage, consumedItemsTotal - producedItemsTotal);
-            new Thread(dummyProducer).start();
+            executor.submit(dummyProducer);
         }
     }
 }
