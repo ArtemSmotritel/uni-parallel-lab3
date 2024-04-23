@@ -1,5 +1,5 @@
 package interfaces;
 
-public interface Producer<T> {
-    void add(T item);
+public interface Producer {
+    void add(String item);
 }

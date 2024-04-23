@@ -1,13 +1,13 @@
 import interfaces.Producer;
 import interfaces.Storage;
 
-public class StringProducer implements Producer<String>, Runnable {
+public class SimpleProducer implements Producer, Runnable {
     private static int ID = 0;
-    private final Storage<String> storage;
-    private final int itemsToProduce;
-    private final int id;
+    protected final Storage storage;
+    protected final int itemsToProduce;
+    protected final int id;
 
-    public StringProducer(Storage<String> storage, int itemsToProduce) {
+    public SimpleProducer(Storage storage, int itemsToProduce) {
         this.storage = storage;
         this.itemsToProduce = itemsToProduce;
         id = ++ID;

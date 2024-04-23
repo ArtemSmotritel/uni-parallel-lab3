@@ -3,13 +3,13 @@ import interfaces.Storage;
 import java.util.LinkedList;
 import java.util.concurrent.Semaphore;
 
-public class StringStorage implements Storage<String> {
+public class SimpleStorage implements Storage {
     private final LinkedList<String> tList;
     private final Semaphore accessSemaphore;
     private final Semaphore fullSemaphore;
     private final Semaphore emptySemaphore;
 
-    public StringStorage(int capacity) {
+    public SimpleStorage(int capacity) {
         this.tList = new LinkedList<>();
         accessSemaphore = new Semaphore(1);
         fullSemaphore = new Semaphore(capacity);

@@ -2,13 +2,13 @@ import interfaces.Storage;
 
 import java.util.function.Consumer;
 
-public class StringConsumer implements Consumer<String>, Runnable {
+public class SimpleConsumer implements Consumer<String>, Runnable {
     private static int ID = 0;
-    private final Storage<String> stringStorage;
-    private final int id;
+    private final Storage stringStorage;
+    protected final int id;
     private final int itemsToConsume;
 
-    public StringConsumer(Storage<String> stringStorage, int itemsToConsume) {
+    public SimpleConsumer(Storage stringStorage, int itemsToConsume) {
         this.stringStorage = stringStorage;
         this.id = ++ID;
         this.itemsToConsume = itemsToConsume;
@@ -31,7 +31,7 @@ public class StringConsumer implements Consumer<String>, Runnable {
             try {
                 item = stringStorage.get();
                 accept(item);
-                Thread.sleep(3000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 System.err.println("An error occurred when trying to consume an item from the storage:");
                 System.err.println(e.getMessage());
